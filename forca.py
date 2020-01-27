@@ -17,7 +17,7 @@ while True:
     if not palavra.isnumeric() and palavra.isalpha():
       break
     else:
-      print(f'ERRO:"{palavra}" Não é válido. Digite uma palavra apenas com letras')
+      print(f'ERRO:"{palavra}" não é válido. Digite uma palavra apenas com letras')
 
   palavra = palavra.upper()
   dica = str(input('Dica: ')).strip()
