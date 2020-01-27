@@ -11,9 +11,16 @@ pernad = ' '
 erro = 0
 while True:
   chutes = ''
-  palavra = str(input('Palavra: '))
+
+  while True:
+    palavra = str(input('Palavra: ')).strip()
+    if not palavra.isnumeric() and palavra.isalpha():
+      break
+    else:
+      print(f'ERRO:"{palavra}" não é válido. Digite uma palavra apenas com letras')
+
   palavra = palavra.upper()
-  dica = str(input('Dica: '))
+  dica = str(input('Dica: ')).strip()
   if dica == palavra:
     print('A dica não pode ser a resposta!')
   else:
@@ -35,7 +42,13 @@ while True:
     sleep(3)
     break
 
-  chute = str(input('Chute uma letra!\n'))
+  while True:
+    chute = str(input('Chute uma letra!\n')).strip()
+    if len(chute) == 1 and chute.isalpha():
+      break
+    else:
+      print(f'ERRO!:"{chute}" não é válido. Digite apenas uma letra')
+
   chute = chute.upper()
   if chute in chutes:
     print('Você já tentou essa letra')
