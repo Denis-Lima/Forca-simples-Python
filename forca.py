@@ -20,9 +20,10 @@ while True:
       print(f'ERRO:"{palavra}" não é válido. Digite uma palavra apenas com letras')
 
   palavra = palavra.upper()
-  dica = str(input('Dica: ')).strip()
+  dica = str(input('Dica: ')).strip().upper()
   if dica == palavra:
     print('A dica não pode ser a resposta!')
+   
   else:
     certo = '-' * len(palavra)
     break
